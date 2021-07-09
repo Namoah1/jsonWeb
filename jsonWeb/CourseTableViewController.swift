@@ -8,6 +8,8 @@
 import UIKit
 
 class CourseTableViewController: UITableViewController {
+    
+    var courses: [Course] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,16 @@ class CourseTableViewController: UITableViewController {
                 if error != nil {
                     print("There was an error")
                 } else if data != nil{
-                    print(String(data: data!, encoding: .utf8))
+                    if let coursesFromAPI = try? JSONDecoder().decode([Course].self, from: data!){
+                        
+                        //To run the code on the main thread as soon as it's possbile
+                        DispatchQueue.main.async {
+                            self.courses = coursesFromAPI
+                            self.tableView.reloadData() //self needed because inside closure
+                        }
+                       
+                    }
+                    
                 }
                 
             }.resume()
@@ -37,7 +48,15 @@ class CourseTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return courses.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath)
+        let course = courses[indexPath.row]
+        
+        cell.textLabel?.text = course.title
+        return cell
     }
 
 
