@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CourseTableViewController: UITableViewController {
     
     var courses: [Course] = []
-
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,11 +62,22 @@ class CourseTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath)
-        let course = courses[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as? CourseTableViewCell {
+            let course = courses[indexPath.row]
+            cell.courseTitleLabel.text = course.title
+            cell.courseSubtitleLabel.text = course.subtitle
+            
+            if let url = URL(string: course.imageURL) {
+                cell.imageView?.kf.setImage(with: url)
+            }
+            
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+            
         
-        
-        return cell
     }
 
 
