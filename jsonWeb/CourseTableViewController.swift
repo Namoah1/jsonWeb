@@ -61,7 +61,7 @@ class CourseTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath)
         let course = courses[indexPath.row]
         
-        cell.textLabel?.text = course.title
+        
         return cell
     }
 

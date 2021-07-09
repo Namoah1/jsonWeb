@@ -16,12 +16,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" id="Ozd-50-6sm">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" rowHeight="436" id="Ozd-50-6sm">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="436"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ozd-50-6sm" id="aO9-o2-lHK">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="436"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zappyCodeimg" translatesAutoresizingMaskIntoConstraints="NO" id="Tnd-EJ-73A">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Tnd-EJ-73A" secondAttribute="height" multiplier="750:422" id="JNN-Kd-Utw"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dv2-li-eLO">
+                                            <rect key="frame" x="20" y="252" width="374" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foT-ss-Svu">
+                                            <rect key="frame" x="20" y="280" width="374" height="145"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="foT-ss-Svu" secondAttribute="trailing" id="BEb-SA-ytw"/>
+                                        <constraint firstItem="foT-ss-Svu" firstAttribute="leading" secondItem="aO9-o2-lHK" secondAttribute="leadingMargin" id="G1p-vc-IJ2"/>
+                                        <constraint firstItem="Tnd-EJ-73A" firstAttribute="top" secondItem="aO9-o2-lHK" secondAttribute="top" id="GJ6-Ik-hUf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="foT-ss-Svu" secondAttribute="bottom" id="KMP-eO-UON"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dv2-li-eLO" secondAttribute="trailing" id="UZF-lQ-nd0"/>
+                                        <constraint firstItem="Tnd-EJ-73A" firstAttribute="leading" secondItem="aO9-o2-lHK" secondAttribute="leading" id="VIz-ri-mgp"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tnd-EJ-73A" secondAttribute="trailing" id="pGP-8F-PDi"/>
+                                        <constraint firstItem="foT-ss-Svu" firstAttribute="top" secondItem="dv2-li-eLO" secondAttribute="bottom" constant="7.5" id="r7P-Gd-ftj"/>
+                                        <constraint firstItem="dv2-li-eLO" firstAttribute="leading" secondItem="aO9-o2-lHK" secondAttribute="leadingMargin" id="vnT-bK-hm5"/>
+                                        <constraint firstItem="dv2-li-eLO" firstAttribute="top" secondItem="Tnd-EJ-73A" secondAttribute="bottom" constant="19" id="wph-J2-U23"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -62,6 +94,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="zappyCodeimg" width="750" height="422"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
