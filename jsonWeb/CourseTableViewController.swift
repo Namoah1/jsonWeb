@@ -44,6 +44,12 @@ class CourseTableViewController: UITableViewController {
             }.resume()
         }
     }
+    
+    
+    @IBAction func reloadTapped(_ sender: Any) {
+        getCourses()
+    }
+    
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
